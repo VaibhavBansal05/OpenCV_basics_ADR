@@ -2,17 +2,17 @@ import numpy as np
 import cv2
 from PIL import Image 
 
-yellow = [0, 255, 255]  # yellow in BGR colorspace
+yellow = [0, 255, 255]  # Red in BGR colorspace
 cap = cv2.VideoCapture(0)
 while True:
     ret, frame = cap.read()
 
     hsvImage = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
 
-    lower_yellow = np.array([0, 170, 70])
-    upper_yellow = np.array([9, 255, 255])
+    lower_red = np.array([0, 170, 70])
+    upper_red = np.array([9, 255, 255])
 
-    mask = cv2.inRange(hsvImage, lower_yellow, upper_yellow)
+    mask = cv2.inRange(hsvImage, lower_red, upper_red)
     res = cv2.bitwise_and(frame,frame, mask= mask)
     kernel = np.ones((3,3),np.uint8)
     erosion = cv2.erode(res,kernel,iterations = 1)
