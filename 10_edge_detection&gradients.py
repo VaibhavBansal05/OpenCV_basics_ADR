@@ -10,7 +10,7 @@ while True:
     laplacian = cv2.Laplacian(frame, cv2.CV_64F)
     sobelx = cv2.Sobel(frame,cv2.CV_64F, 1, 0, ksize=5)
     sobely = cv2.Sobel(frame,cv2.CV_64F, 0, 1, ksize=5)
-    edges = cv2.Canny(frame, 150, 150)
+    edges = cv2.Canny(frame, 100, 100)
 
     cv2.imshow('Original',frame)
     cv2.imshow('laplacian',laplacian)
