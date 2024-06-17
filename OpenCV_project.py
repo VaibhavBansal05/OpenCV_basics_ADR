@@ -2,11 +2,7 @@ import numpy as np
 import cv2
 from PIL import Image 
 
-<<<<<<< HEAD
 red = [0, 255, 255]  # Red in BGR colorspace
-=======
-yellow = [0, 255, 255]  # Red in BGR colorspace
->>>>>>> 3972ee430fd097d3ff02eada129ad12ff2b49cf3
 cap = cv2.VideoCapture(0)
 while True:
     ret, frame = cap.read()
